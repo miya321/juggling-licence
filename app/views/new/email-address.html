@@ -1,5 +1,7 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = 'Your email address' %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -11,24 +13,18 @@
           label: {
             text: pageName,
             isPageHeading: true,
-            classes: "govuk-label--xl"
+            classes: "govuk-label--l"
           },
-          value: data.email,
+          value: data.new.emailAddress,
           type: "email",
           autocomplete: "email",
           spellcheck: false
         }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
       </form>
-
-
-    <h1 class="govuk-heading-xl"> {{ pageName }} </h1>
-    <p>To apply for a juggling licence you must tell us about your juggling abilities</p>
-    {{ govukButton({
-      text: "Start now",
-      href: "/new/email-address",
-      isStartButton: true
-    }) }}
-
   </div>
 </div>
 
