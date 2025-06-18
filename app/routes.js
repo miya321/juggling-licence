@@ -16,7 +16,11 @@ router.post('/new/code', (req, res) => {
 })
 
 router.post('/new/name', (req, res) => {
+    if(req.query.returnUrl) {
+    res.redirect(req.query.returnUrl)
+    } else{
     res.redirect('/new/juggling-balls')
+    }
 })
 
 router.post('/new/juggling-balls', (req, res) => {

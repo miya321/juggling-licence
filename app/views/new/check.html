@@ -60,7 +60,7 @@
           actions: {
             items: [
               {
-                href: "/new/name",
+                href: "/new/name?returnUrl=/new/check",
                 text: "Change",
                 visuallyHiddenText: "Your name"
               }
@@ -121,7 +121,7 @@
       ]
     }) }}
 
-    <p>By submittng this application you're confirming that, to the best of your knowledge, the details you are [roviding are correct.</p>
+    <p>By submittng this application you're confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
       <form novalidate method="post">
         {{ govukButton({
