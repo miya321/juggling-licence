@@ -1,12 +1,12 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = 'Placeholder %}
+{% set pageName = 'What is your most impressive juggling trick?' %}
 
 {% block beforeContent %}
 
   {{ govukBackLink({
     text: "Back",
-    href: "/new"
+    href: "/new/juggling-balls"
   }) }}
 
 {% endblock %}
@@ -17,6 +17,21 @@
   <div class="govuk-grid-column-two-thirds">
 
       <form novalidate method="post">
+
+        {{ govukCharacterCount({
+          name: "[new][trick]",
+          id: "[new][trick]",
+          label: {
+            text: pageName,
+            isPageHeading: true,
+            classes: "govuk-label--xl"
+          },
+          hint: {
+            text: "Hint text"
+          },
+          maxlength: 200,
+          value: data.new.trick
+        }) }}
 
 
         {{ govukButton({
